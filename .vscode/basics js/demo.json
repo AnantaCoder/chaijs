@@ -1,0 +1,81 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Anirban Sarkar",
+            "email": "anirban.sarkar@example.com",
+            "age": 22,
+            "job": "Student",
+            "skills": [
+                "Python",
+                "JavaScript",
+                "HTML",
+                "CSS"
+            ],
+            "location": {
+                "city": "Kolkata",
+                "country": "India"
+            }
+        },
+        {
+            "id": 2,
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "age": 30,
+            "job": "Developer",
+            "skills": [
+                "Java",
+                "Node.js",
+                "React"
+            ],
+            "location": {
+                "city": "San Francisco",
+                "country": "USA"
+            }
+        },
+        {
+            "id": 3,
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com",
+            "age": 25,
+            "job": "Designer",
+            "skills": [
+                "Photoshop",
+                "Illustrator",
+                "Figma"
+            ],
+            "location": {
+                "city": "London",
+                "country": "UK"
+            }
+        }
+    ],
+    "products": [
+        {
+            "product_id": "P001",
+            "name": "Laptop",
+            "category": "Electronics",
+            "price": 750,
+            "in_stock": true
+        },
+        {
+            "product_id": "P002",
+            "name": "Headphones",
+            "category": "Accessories",
+            "price": 50,
+            "in_stock": false
+        },
+        {
+            "product_id": "P003",
+            "name": "Smartphone",
+            "category": "Electronics",
+            "price": 500,
+            "in_stock": true
+        }
+    ],
+    "settings": {
+        "theme": "dark",
+        "language": "en-US",
+        "notifications": true
+    }
+}

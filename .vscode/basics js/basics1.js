@@ -76,7 +76,7 @@ x = 5;       // Now x is a Number
 x = "John";  // Now x is a String
 // js is DYNAMICALLY TYPED LANGUAGE a In JavaScript, you don't have to declare the type of a variable when you define it. The type is determined at runtime based on the value assigned to the variable.
 
-// --------------------array ------------------------------------------------
+// --------------------string ------------------------------------------------
 let str = "hi my Name is Raul"
 console.log("the length is ",str.length)
 console.log(str.toLowerCase())
@@ -93,7 +93,7 @@ console.log(str.slice(0, 5)); // hi my
 let greetSTR = "Hello, world!, into my world";
 console.log(greetSTR.replace("world", "JavaScript")); //replaces world with js
 console.log(greetSTR.replaceAll("world", "JavaScript")); //replaces all world with js
-console.log(greetSTR.split(',')) // returns output into an array
+console.log(greetSTR.split(',')) // returns output into an array [ 'Hello', ' world!', ' into my world' ]
 let namecard = "Anirban";
 console.log(`Hello, ${namecard}!`); // Hello, Anirban!
 
@@ -105,3 +105,22 @@ console.log(srt3.concat(", ", str4)); //  Hello, World
 let str5 = "  Hello  ";
 console.log(str5.trim()); // Output: Hello
 
+//stack +> primitive , heap => non primitive
+// primitive data types - number, string, boolean, null, undefined, symbol
+// non primitive data types - array, object, function
+//obj
+let user1 = {
+    email : "gmail.com",
+    name : "John Doe",
+}
+console.log(typeof user1)
+let user3 = user1
+console.log(user3.email) //gmail.com
+let user2 = "anirbansarkar@gmail.com"
+console.log(user1 === user2)
+
+//-------------------- strings ----------------------------------
+// strings are immutable
+console.log(`My name is ${user1.name} and my email is ${user1.email}`)
+console.log(user1.name[2])
+console.log(user1.name.length)
