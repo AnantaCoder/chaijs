@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Content Loader</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+    .navbar {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      background-color: #333;
+    }
+    .navbar button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      color: white;
+      background-color: #444;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .navbar button:hover {
+      background-color: #555;
+    }
+    .content {
+      padding: 20px;
+      display: none; /* Hide all content divs initially */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <button data-target="home">Home</button>
+    <button data-target="about">About Us</button>
+    <button data-target="services">Services</button>
+    <button data-target="contact">Contact</button>
+  </div>
+
+  <!-- Content Divs -->
+  <div id="home" class="content">
+    <h2>Welcome to the Home section!</h2>
+    <p>This is the home page content.</p>
+  </div>
+  <div id="about" class="content">
+    <h2>About Us</h2>
+    <p>This is the About Us section content.</p>
+  </div>
+  <div id="services" class="content">
+    <h2>Our Services</h2>
+    <p>This is the Services section content.</p>
+  </div>
+  <div id="contact" class="content">
+    <h2>Contact Us</h2>
+    <p>This is the Contact section content.</p>
+  </div>
+
+  <script>
+    // Get all navigation buttons and content divs
+    const buttons = document.querySelectorAll(".navbar button");
+    const contentDivs = document.querySelectorAll(".content");
+
+    // Function to show the correct content
+    function showContent(target) {
+      // Hide all content divs
+      contentDivs.forEach(div => div.style.display = "none");
+
+      // Show the selected content div
+      const selectedDiv = document.getElementById(target);
+      if (selectedDiv) {
+        selectedDiv.style.display = "block";
+      }
+    }
+    // Add event listener for each button
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const target = button.getAttribute("data-target");
+        showContent(target);
+      });
+    });
+  </script>
+</body>
+</html>
