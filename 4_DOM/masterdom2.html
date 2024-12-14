@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+    <style>
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1e252d;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .reveal {
+            border: 2px solid #ffffff;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            flex: 1;
+            margin-right: 10px;
+            border-radius: 8px;
+        }
+
+        .content {
+            flex: 3;
+            border: 2px solid #ffffff;
+            padding: 20px;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 8px;
+            overflow: hidden;
+
+          
+            opacity: 0;
+            height: 0;
+            transition: opacity 0.5s ease-out, height 0.5s ease-out;
+        }
+
+
+        h1 {
+            position: absolute;
+            top: 10%;
+            font-size: 3rem;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Event Listeners</h1>
+    <div class="container">
+        <div class="reveal">
+            <button style="background: transparent; color:#ccc;padding:50px; cursor:pointer; border-radius:7px;">Reveal
+                More</button>
+        </div>
+        <div class="content" style="display: none;">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia distinctio hic facilis, repudiandae
+                incidunt quisquam neque officiis quibusdam cum quam suscipit dolorem animi aliquid harum. Unde sed
+                illo aut officiis inventore quod quibusdam, ipsum aliquam reprehenderit ad minima sit ipsa?
+                Ducimus nesciunt laudantium deleniti porro maxime molestias reiciendis, hic omnis?
+            </p>
+        </div>
+    </div>
+
+    <script src="masterdom2.js"></script>
+</body>
+
+</html>

@@ -14,12 +14,12 @@ for(i = 0; i<listItems.length ;i++){
 // 3. getElementsByTagName()
 const allListItems = document.getElementsByTagName('li');
 for (let item of allListItems) {
-    item.style.color = 'green';
+    item.style.color = 'black';
 }
 
 // 4. querySelector()
 const firstListItem = document.querySelector('.list-items');
-firstListItem.style.backgroundColor = 'red';
+firstListItem.style.backgroundColor = 'gray';
 
 // 5. querySelectorAll()
 const allItems = document.querySelectorAll('.list-items');
@@ -31,7 +31,7 @@ allItems.forEach(item => (item.style.fontWeight = 'bold'));
 const li = document.querySelector('li')
 const ul = document.querySelector('ul')
 ul.append(li)
-li.innerText = 'THIS IS JAUSHWA'
+li.innerText = 'THIS IS harry'
 
 
 
@@ -50,11 +50,20 @@ console.log(div1.childNodes); //NodeList(5) [text, h1#main-heading, text, ul, t
 console.log(div1.nextSibling)
 
 
+// EVENT LISTENERS
+// 1. addEventListener()
+
+// Alert "Hello World!" when the user clicks on an element:
+
+ul1.addEventListener("click", function(){ alert(`This is the event listener ${ul.textContent}`); });
 
 
+li.addEventListener("mouseover",hovering);
+function hovering(){
+    console.log("you are hovering over the ul");
+    
 
-
-
+}
 
 
 
