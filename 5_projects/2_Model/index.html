@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes slideFromTop {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideToTop {
+            from {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+        }
+
+        .hidden {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        .visible {
+            visibility: visible;
+            opacity: 1;
+            animation: slideFromTop 0.8s ease-out;
+        }
+
+        .slide-out {
+            animation: slideToTop 0.8s ease-out;
+        }
+    </style>
+</head>
+
+<body >
+    <!-- Card -->
+    <div class="w-80 bg-black shadow rounded hidden justify-center " id="content">
+        <div class="h-48 w-full bg-gray-200 flex flex-col justify-between p-4 bg-cover bg-center"
+            style="background-image: url('https://images.pexels.com/photos/607812/pexels-photo-607812.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')">
+            <div class="flex justify-between">
+                <input type="checkbox" />
+                <button class="text-white hover:text-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                </button>
+            </div>
+            <div>
+                <span
+                    class="uppercase text-xs bg-green-50 p-0.5 border-green-500 border rounded text-green-700 font-medium select-none">
+                    available
+                </span>
+            </div>
+        </div>
+        <div class="p-4 flex flex-col items-center">
+            <p class="text-gray-400 font-light text-xs text-center">
+                Hammond robotics
+            </p>
+            <h1 class="text-gray-800 text-center mt-1   text-white">MOBILE</h1>
+            <p class="text-center text-gray-800 mt-1 text-white">₹9999</p>
+            <div class="inline-flex items-center mt-2">
+                <button id="decrement"
+                    class="bg-white rounded-l border text-gray-600 hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 inline-flex items-center px-2 py-1 border-r border-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4" />
+                    </svg>
+                </button>
+                <div id="quantity" 
+                    class="bg-gray-100 border-t border-b border-gray-100 text-gray-600 hover:bg-gray-100 inline-flex items-center px-4 py-1 select-none">
+                    1
+                </div>
+                <button id="increment"
+                    class="bg-white rounded-r border text-gray-600 hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 inline-flex items-center px-2 py-1 border-r border-gray-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-4" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+                    </svg>
+                </button>
+            </div>
+
+            <button onclick="order()"
+                class="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
+                Add to order
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+            </button>
+
+            <div class="flex justify-between w-full mt-4">
+                <div class="flex items-center text-gray-500">
+                    <input id="input1" type="checkbox" class="mr-2" />
+                    <label for="input1" class="select-none cursor-pointer">Compare</label>
+                </div>
+                <div>
+                    <button
+                        class="py-1 px-4 bg-white text-gray-600 rounded hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 inline-flex items-center">
+                        Add to List
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <!-- Toggle Button -->
+    <button id="btn"
+        class="w-81 justify-center bg-red-500 text-white font-bold py-2 px-4 rounded-full hover:bg-green-600 transition duration-300"
+        aria-expanded="false">
+        Toggle Button
+    </button>
+
+    <script>
+        // Get the button element and use it to use fire animations
+        const content = document.getElementById("content");
+        const btn = document.getElementById("btn");
+
+        btn.addEventListener("click", () => {
+            if (content.classList.contains("hidden")) {
+                content.classList.remove("hidden");
+                content.classList.add("visible");
+                btn.setAttribute("aria-expanded", "true");
+            } else {
+                content.classList.add("slide-out");
+                content.addEventListener("animationend", () => {
+                    content.classList.remove("visible", "slide-out");
+                    content.classList.add("hidden");
+                }, { once: true });
+                btn.setAttribute("aria-expanded", "false");
+            }
+        });
+
+        //function to increase and decrease quantity
+        const decrementBtn = document.getElementById("decrement");
+        const incrementBtn = document.getElementById("increment");
+        const quantityDiv = document.getElementById("quantity");
+        let quantity = parseInt(quantityDiv.textContent);
+        decrementBtn.addEventListener("click",()=>{
+            if(quantity>1){
+                quantity--;
+                quantityDiv.textContent = quantity;
+
+            }
+        });
+        incrementBtn.addEventListener("click", () => {
+            quantity++;
+            quantityDiv.textContent = quantity;
+        });
+
+        function order(){
+            alert(`Order placed for quantity : ${quantity}`);
+        }
+
+    </script>
+</body>
+
+</html>
