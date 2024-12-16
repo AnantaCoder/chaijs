@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    
+    background-image: linear-gradient(to right, #a8d8ea 0%, #1e3c72 100%);
+    animation: gradientAnimation 5s ease-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-image: linear-gradient(to right, #a8d8ea 0%, #1e3c72 100%);
+    }
+    50% {
+        background-image: linear-gradient(to right, #1e3c72 0%, #a8d8ea 100%);
+    }
+    100% {
+        background-image: linear-gradient(to right, #a8d8ea 0%, #1e3c72 100%);
+    }
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(200, 46, 170, 0.05) 25px 25px;
+    text-align: center;
+    width: 300px;
+}
+input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.info {
+    margin-top: 20px;
+}
+
+#display {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
