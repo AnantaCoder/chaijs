@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #1c1c1c;
+            color: #ffffff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin: 20px 0;
+            color: #00ffea;
+            text-shadow: 0 0 8px #00ffea, 0 0 12px #00e5ff;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
+
+        li {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            perspective: 1000px; /* Creates a 3D effect */
+        }
+
+        li img {
+            width: 200px;
+            border-radius: 15px;
+            transition: transform 0.6s ease-in-out, filter 0.3s ease-in-out;
+            will-change: transform;
+        }
+
+        /* Image Hover Effects: Spin and Tilt */
+        li:hover img {
+            transform: rotateY(15deg) rotateZ(5deg) scale(1.1);
+            filter: brightness(1.2) saturate(1.4);
+        }
+
+        li:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px #00ffea, 0 0 30px #00e5ff;
+        }
+
+        /* Neon Link Styling */
+        a {
+            font-size: 1.2rem;
+            color: #00ffea;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #00ffea;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: #ff007f;
+            border-color: #ff007f;
+            box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+            transform: scale(1.1);
+        }
+
+        /* Bounce Animation */
+        li img {
+            animation: bounce 3s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://images.unsplash.com/photo-1444464666168-49d633b86797?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" id="google">Google</a></li>
+        </ul>
+   </div>
+   <script src="script.js"></script>
+</body>
+</html>

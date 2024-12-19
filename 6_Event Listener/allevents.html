@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #00ffea;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 20px 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #ff007f;
+            margin: 20px auto;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #2d2d2d;
+            border-radius: 10px;
+            display: inline-block;
+            max-width: 90%;
+            width: 500px;
+            height: 400px;
+            overflow-y: auto; 
+            color: #fff;
+            text-align: left;
+            overflow: hidden;
+        }
+
+        pre {
+            margin: 0;
+            white-space: pre-wrap; 
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Listener Demo</h1>
+    <p>Click the box, move your mouse, or press any key to see event details.</p>
+
+    <!-- Interactive Div -->
+    <div class="box" id="eventBox">Click Me!</div>
+
+    <!-- Output Section -->
+    <div id="output">
+        <h3>Event Details:</h3>
+        <pre id="eventDetails">No events triggered yet...</pre>
+    </div>
+
+    <script>
+        // Target elements
+        const box = document.getElementById('eventBox');
+        const output = document.getElementById('eventDetails');
+
+        // Helper function to display event details
+        function displayEventDetails(event) {
+            const details = `
+Type: ${event.type}
+Timestamp: ${event.timeStamp}ms
+Default Prevented: ${event.defaultPrevented}
+
+Target: ${event.target.tagName}
+Current Target: ${event.currentTarget.tagName}
+Src Element: ${event.srcElement.tagName || 'N/A'}
+To Element: ${event.toElement ? event.toElement.tagName : 'N/A'}
+
+Client X/Y: (${event.clientX}, ${event.clientY})
+Screen X/Y: (${event.screenX}, ${event.screenY})
+
+Alt Key: ${event.altKey}
+Ctrl Key: ${event.ctrlKey}
+Shift Key: ${event.shiftKey}
+Key Code: ${event.keyCode || 'N/A'}
+
+            `;
+            output.textContent = details;
+        }
+
+        // Click Event Listener
+        box.addEventListener('click', (e) => {
+            displayEventDetails(e);
+        });
+
+        // Mousemove Event Listener
+        box.addEventListener('mousemove', (e) => {
+            displayEventDetails(e);
+        });
+
+        // Keydown Event Listener
+        document.addEventListener('keydown', (e) => {
+            displayEventDetails(e);
+        });
+
+        // Prevent default behavior for demonstration
+        box.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            displayEventDetails(e);
+        });
+    </script>
+</body>
+</html>
