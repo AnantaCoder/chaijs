@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>one card</title>
+    <link rel="stylesheet" href="one.css">
+</head>
+
+<body>
+    <div class="neon-card">
+        <h2>Anirban Sarkar</h2>
+        <p>Glow up your design with this neon effect!</p>
+        <button class="neon-button">Click Me</button>
+    </div>
+
+
+    <script>
+        const btn = document.querySelector(".neon-button")
+        btn.addEventListener("click", function () {
+            clearInterval(changeMe);
+            alert("Event stopped")
+        })
+        const change = function () {
+            document.querySelector("h2").innerText = "Best js series"
+        };
+        const anirban = (function () {
+            console.log("anirban") // function and a handler
+        });
+        setTimeout(anirban, 2000) // reference and handler 
+        const changeMe = setTimeout(change, 3000)
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0f0f0f;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.neon-card {
+    background: rgba(20, 20, 20, 0.9); 
+    
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1), 0 0 40px rgba(255, 255, 255, 0.2);
+    border: 2px solid #fff;
+    position: relative;
+    overflow: hidden;
+}
+/* bg of .neon card  is affecting the bg of neon card of rainbow color */
+.neon-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff0000, #ff9900, #00ff00, #00ffff, #0000ff, #ff00ff, #ff0000); /*rainbow bg*/
+    z-index: -1;
+    
+    animation: glow 6s linear infinite;
+}
+
+@keyframes glow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 200%; }
+}
+
+.neon-button {
+    background: transparent;
+    border: 2px solid #00ff99;
+    color: #00ff99;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+    box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99;
+}
+
+.neon-button:hover {
+    color: #fff;
+    border-color: #fff;
+    box-shadow: 0 0 20px #fff, 0 0 40px #fff;
+    background: #9c0505;
+}

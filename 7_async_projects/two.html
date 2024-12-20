@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Card with Animations</title>
+    <link rel="stylesheet" href="two.css">
+</head>
+<body>
+    <div class="neon-card">
+        <img src="sh.png" alt="Sample Image" class="neon-image">
+        <h2>Neon Card</h2>
+        <p>Experience the glow of modern design with animations!</p>
+        <p id="counter">5</p>
+        <div class="button-group">
+            <button class="neon-button" id="btn1">Timeout</button>
+            <button class="neon-button" id="btn2">interval</button>
+        </div>
+    </div>
+
+    <script>
+        const pfp = document.querySelector(".neon-card img")
+        const btn1 = document.querySelector("#btn1");
+        const btn2 = document.querySelector("#btn2");
+        const img1 = 'sh.png';
+        const img2 = 'sh1.png';
+        let counter  = document.getElementById("counter");
+        btn1.addEventListener("click", () => {
+            pfp.src = img2;
+            setTimeout(function(){
+                pfp.src = img1;
+            },2000);
+        });
+
+        btn2.addEventListener("click", () => {
+            let x = 1;
+            alert("Event will stop in 5s")
+            const interval = setInterval(function(){
+                if(x ===1){
+                    pfp.src = img2;
+                    x =2;
+                }else{
+                    pfp.src = img1;
+                    x =1;
+                }
+            },200);
+            let c = 5;
+            const CounterInterval = setInterval(function(){
+                c -=1;
+                counter.textContent = c;
+                if(c <= 0){
+                    clearInterval(CounterInterval);
+                    setTimeout(function(){
+                        counter.textContent = 5;
+                    },1000);
+                }
+            },1000);
+
+
+            setTimeout(function(){
+                clearInterval(interval);
+            },5000);
+
+
+        });
+    </script>
+</body>
+</html>
