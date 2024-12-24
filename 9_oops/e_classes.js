@@ -19,6 +19,7 @@ console.log(momo.changeUsername());
 
 
 // behind the scene
+/*
 function User(username, email, password){
     this.username = username;
     this.email = email;
@@ -36,4 +37,4 @@ User.prototype.changeUsername = function(){
 const ramlal = new User("ramlal", "ramlal@gmail.com", "123")
 
 console.log(ramlal.encryptPassword());
-console.log(ramlal.changeUsername());
+console.log(ramlal.changeUsername());*/

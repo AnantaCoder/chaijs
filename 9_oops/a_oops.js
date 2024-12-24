@@ -1,3 +1,21 @@
+/*OOP
+Object
+collection of properties and methods
+toLowerCase
+why use OOP
+parts of OOP
+Object literal
+
+Constructor function
+Prototypes
+Classes
+Instances (new, this)
+4 pillars
+Abstraction Encapsulation Inheritance Polymorphism*/
+
+
+
+
 const user = { // this is an obj but manual work is much more time consuming 
     username: "Anirban",
     loginCount: 8,

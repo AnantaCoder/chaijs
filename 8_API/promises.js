@@ -49,7 +49,7 @@ promise4.then(function (user) {
     console.log(user);
     return user.username;
 
-}).then((username) => {
+}).then(username => {
     console.log(username);
 
 }).catch(function (error) {

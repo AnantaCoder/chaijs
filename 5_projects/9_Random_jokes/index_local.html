@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #0c1323;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border: 5px solid rgb(146, 168, 36);
+        }
+        button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #043d7b;
+            color: white;
+        }
+        button:hover {
+            background-color: #18b300;
+        }
+        h5 {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="elements">
+            <h3>Random Quote Generator</h3>
+            <h5 id="quote">Click 'Next' to fetch a quote!</h5>
+            <h5 id="punchline" style="visibility: hidden;">Punchline will be revealed here!</h5>
+            <button id="revealBtn">Unveil</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </div>
+
+   <script>
+    const quoteElement = document.getElementById('quote');
+const punchlineElement = document.getElementById('punchline');
+const revealButton = document.getElementById('revealBtn');
+const nextButton = document.getElementById('nextBtn');
+
+let jokesData = []; // Array to store jokes
+let currentJokeIndex = 0;
+
+// Fetch jokes from the local JSON file HW
+
+   </script>
+</body>
+</html>
