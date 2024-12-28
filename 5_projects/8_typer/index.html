@@ -1,17 +1,25 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
     <title>Auto Text</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+</head>
+<body>
     <p>
-      <span class="js">JavaScript</span> is <span class="typed-text"></span>
-      <span class="cursor">&nbsp; </span>
+        <span class="js">JavaScript</span> is <span class="typed-text"></span>
+        <span class="cursor">&nbsp;</span>
     </p>
-    
+    <button id="btn" class="top-left-btn">🔊</button>
+
+    <audio id="typedsound" preload="auto">
+        <source src="typing.mp3" type="audio/mp3">
+    </audio>
+    <audio id="deletesound" preload="auto">
+        <source src="deleting.mp3" type="audio/mp3">
+    </audio>
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
