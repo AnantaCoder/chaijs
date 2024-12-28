@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
             margin: 0;
             background-color: #0c1323;
         }
+
         .container {
             text-align: center;
             padding: 20px;
@@ -23,6 +25,7 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             border: 5px solid rgb(146, 168, 36);
         }
+
         button {
             margin: 5px;
             padding: 10px 15px;
@@ -33,14 +36,17 @@
             background-color: #043d7b;
             color: white;
         }
+
         button:hover {
             background-color: #18b300;
         }
+
         h5 {
             margin: 10px 0;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="elements">
@@ -52,17 +58,57 @@
         </div>
     </div>
 
-   <script>
-    const quoteElement = document.getElementById('quote');
-const punchlineElement = document.getElementById('punchline');
-const revealButton = document.getElementById('revealBtn');
-const nextButton = document.getElementById('nextBtn');
+    <script>
+        const quoteElement = document.getElementById('quote');
+        const punchlineElement = document.getElementById('punchline');
+        const revealButton = document.getElementById('revealBtn');
+        const nextButton = document.getElementById('nextBtn');
 
-let jokesData = []; // Array to store jokes
-let currentJokeIndex = 0;
+        let jokesData = []; 
+        let currentJokeIndex = 0;
 
-// Fetch jokes from the local JSON file HW
+        fetch('../9_Random_jokes/jokes.json')
+    .then(response => response.text())  
+    .then(function(data){
+        
+        try {
+            jokesData = JSON.parse(data); // storing the data to the array
+            console.log(jokesData)
+        } catch (error) {
+            console.error("Invalid JSON:", error);  
+        }
+    })
+    .catch(error => console.error("Error:", error)); 
+    /*jokesData.forEach(function(jokes){
+        quoteElement.innerText = jokes.setup;
+        punchlineElement.innerText = jokes.punchline;
+        punchlineElement.style.visibility = "hidden"
+    })*/
+    function displayJokes(index) {
+        if (jokesData.length > 0) {
+            const joke = jokesData[index];
+            quoteElement.innerText = joke.setup;
+            punchlineElement.innerText = joke.punchline;
+            punchlineElement.style.visibility = "hidden";  
+        }
+    }
+    revealButton.addEventListener("click",()=>{
+        punchlineElement.style.visibility = "visible";  
 
-   </script>
+    })
+    function MathRandom(min,max){
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    nextButton.addEventListener("click",()=>{
+        /*currentJokeIndex = (currentJokeIndex +1) % jokesData.length; // loop back in first joke  
+        displayJokes(currentJokeIndex)*/
+
+        currentJokeIndex = MathRandom(0,jokesData.length-1)
+        displayJokes(currentJokeIndex)
+        punchlineElement.style.visibility = "hidden";
+    })
+
+    </script>
 </body>
+
 </html>

@@ -25,7 +25,7 @@ if(userLoggedIN && debitCard && 2!=3){
     console.log("You are allowed");
     
 }else{
-    console.log("You are sexy to go");
+    console.log("You are too sexy to go");
     
 }
 // if one is true then

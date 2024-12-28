@@ -18,7 +18,7 @@ let val1;
 val1 = null ?? 10 ?? 20
 console.log(val1) // output 10
 
-// Terniary Operator
+// Ternary Operator
 
 // condition ? true : false
 
